@@ -1,3 +1,3 @@
 # first-kubernetes-deployment
 
-Contains Kubernetes definitions
+Contains Kubernetes object definitions
