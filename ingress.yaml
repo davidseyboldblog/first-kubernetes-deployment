@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-nginx
+  annotations:
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /user-service
+        backend:
+          serviceName: user-service
+          servicePort: 12000
+      - path: /todo-service
+        backend:
+          serviceName: todo-service
+          servicePort: 12001
+      

@@ -1,0 +1,27 @@
+# Kubernetes version
+apiVersion: apps/v1
+# Type of controller
+kind: Deployment
+metadata:
+  name: user-service-deployment
+  labels:
+    app: user-service
+
+spec:
+  # Number of instances of this application that should exist at a time
+  replicas: 1
+  # Defines a selector used to count the number of instances
+  selector:
+    matchLabels:
+      app: user-service
+  template:
+    metadata:
+      labels:
+        app: user-service
+    spec:
+      containers:
+        - name: user-service
+          image: davidseyboldblog/user-service:latest
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 12000
