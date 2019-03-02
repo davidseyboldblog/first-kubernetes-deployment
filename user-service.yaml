@@ -4,7 +4,7 @@ metadata:
   name: user-service
 spec:
   selector:
-    app: user-service
+    app: user
   ports:
   - protocol: TCP
     port: 12000
